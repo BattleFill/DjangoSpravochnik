@@ -1,0 +1,105 @@
+{% extends 'home/base.html' %}
+
+{% block title %} 
+Главная страница
+{% endblock %}
+
+{% block content %}
+  <div class="container">
+    <div class="section left">
+        <a href="/guide" class="button">Справочник</a>
+    </div>
+    <div class="divider"></div>
+    <div class="section right">
+        <a href="/video" class="button">Видеокурсы</a>
+    </div>
+  </div>
+  <style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to bottom, #ffffff, #f8f9fa);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.5s ease;
+    cursor: pointer;
+}
+
+.left {
+    background: linear-gradient(135deg, #39383a, #0e0e0f);
+    color: #fff;
+    position: relative;
+}
+
+.right {
+    background: linear-gradient(135deg, #4e54ac, #1004bb);
+    color: #fff;
+    position: relative;
+}
+
+.section:hover {
+    transform: scale(1.05);
+}
+
+.divider {
+    width: 4px;
+    background-color: rgba(255, 255, 255, 0.3);
+    height: 100%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+.button {
+    text-decoration: none;
+    font-size: 28px;
+    padding: 20px 60px;
+    border: none;
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 2;
+}
+
+.button:hover {
+    background: rgba(255, 255, 255, 0.4);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+    transform: translateY(-5px);
+}
+  </style>
+  
+{% endblock %}

@@ -1,0 +1,70 @@
+{% extends 'home/base.html' %}
+
+{% block title %} 
+Темы
+{% endblock %}
+
+{% block content %}
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ course.title }}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        header {
+            background: #35424a;
+            color: #ffffff;
+            padding: 20px 0;
+            text-align: center;
+        }
+        h1 {
+            margin: 0;
+        }
+        .course-details {
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+        .content-item {
+            margin-bottom: 15px;
+            padding: 10px;
+            background: #e2e2e2;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>{{ course.title }}</h1>
+</header>
+
+<div class="container">
+    <div class="course-details">
+        <h2>Темы курса</h2>
+        {% for content in contents %}
+            <li class="content-item">
+                <h3>{{ content.topic }}</h3>
+                <p>{{ content.text }}</p>
+            </li>
+        {% endfor %}
+    </div>
+</div>
+
+</body>
+
+{% endblock %}
